@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Список рассылок{% endblock %}
+{% block content %}
+    <h1>Список рассылок</h1>
+    <ul>
+        {% for mailing in mailings %}
+            <li>{{ mailing.subject }} - {{ mailing.send_time }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'create_mailing' %}">Создать новую рассылку</a>
+{% endblock %}

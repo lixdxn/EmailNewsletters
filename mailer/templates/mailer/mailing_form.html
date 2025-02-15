@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Создание рассылки{% endblock %}
+{% block content %}
+    <form method="POST">
+        {% csrf_token %}
+        <label for="subject">Subject:</label>
+        <input type="text" name="subject" id="subject" required><br>
+
+        <label for="template">Template:</label>
+        <input type="text" name="template" id="template" required><br>
+
+        <label for="send_time">Send Time:</label>
+        <input type="datetime-local" name="send_time" id="send_time" required><br>
+
+        <button type="submit">Create Mailing</button>
+    </form>
+
+{% endblock %}
